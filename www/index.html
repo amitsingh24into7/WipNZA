@@ -30,9 +30,28 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Wipro unza</title>
 		<script>
+		var iabRef = null;
 		function redirect1(){
-		alert("akhil");
+		/*alert("akhil");
 		window.open('https://wiproleap.wipro.com/home/wipro/cordys/WiproCSO/Web/html/login.htm','_self');
+		*/
+		      try {
+  13                     var url1 = "https://wiproleap.wipro.com/home/wipro/cordys/WiproCSO/Web/html/login.htm";
+  14                     var target = "_self";
+  15                     var showLocationbar = "yes";
+  16                     
+  17                     if (!url1.startsWith('http://') && !url1.startsWith('https://')) {
+  18                         url1 = 'http://' + url;
+  19                     }
+  20                     
+  21                     iabRef = window.open(url1, target, "location=" + (showLocationbar? "yes":"no"));
+  22                     iabRef.addEventListener('loadstart', onLoadStart);
+  23                     iabRef.addEventListener('loadstart', onLoadStop);
+  24                     iabRef.addEventListener('exit', onExit);
+  25                 
+  26                 } catch (e) {
+  27                     alert(e);
+  28                 }
 		}
 		function redirect2(){
 		alert("button");
